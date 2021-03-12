@@ -23,6 +23,13 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
+        val mCategoryFragment = CategoryFragment()
+        val mFragmentManger = fragmentManager
+        mFragmentManger?.beginTransaction()?.apply {
+            replace(R.id.frame_container, mCategoryFragment, CategoryFragment::class.java.simpleName)
+            addToBackStack(null)
+            commit()
+        }
 
     }
 
